@@ -1,0 +1,49 @@
+.page-wrapper {
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+
+  background-image: url("/public/photos/about/katrina.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.heading,
+.para {
+  color: black;
+  margin-top: 4rem;
+  margin-left: 7rem;
+}
+
+.heading {
+  font-size: 3.2rem;
+}
+
+.para {
+  width: 50rem;
+  font-size: 2rem;
+}
+
+@media only screen and (max-width: 1050px) {
+  .heading,
+  .para {
+    margin-left: 3rem;
+  }
+
+  .heading {
+    font-size: 2.7rem;
+  }
+
+  .para {
+    width: 40rem;
+    font-size: 1.7rem;
+  }
+}

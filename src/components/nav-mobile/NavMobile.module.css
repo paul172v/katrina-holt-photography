@@ -1,0 +1,107 @@
+.nav-wrapper {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+
+.signature-wrapper {
+  margin-top: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid rgb(199, 34, 34);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.signature-h1 {
+  font-family: "Dancing Script", cursive;
+  color: white;
+  font-size: 4.2rem;
+}
+
+.signature-icon {
+  color: white;
+  font-size: 4.6rem;
+  padding-top: 2rem;
+}
+
+.nav-ul {
+  list-style: none;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+  border-bottom: 2px solid rgb(199, 34, 34);
+}
+
+.nav-li {
+  margin: 1.5rem 0;
+}
+
+.nav-li a {
+  text-decoration: none;
+  color: white;
+  font-size: 2rem;
+  border-bottom: 1px solid white;
+}
+
+.nav-li a:hover {
+  color: rgb(199, 34, 34);
+}
+
+.nav-li .active {
+  text-decoration: none;
+  color: white;
+  font-size: 2rem;
+  border-bottom: 1px solid rgb(199, 34, 34);
+}
+
+.contact-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-heading {
+  font-size: 2.5rem;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.contact-text {
+  font-size: 1.75rem;
+  margin: 0.5rem 0;
+}
+
+.contact-email,
+.contact-call {
+  text-decoration: none;
+  color: white;
+  font-size: 2rem;
+  margin: 0.5rem 0;
+  border-bottom: 1px solid white;
+}
+
+.contact-email:active,
+.contact-call:active {
+  border-bottom: 1px solid rgb(199, 34, 34);
+}
+
+.contact-email:hover,
+.contact-call:hover {
+  color: rgb(199, 34, 34);
+}
+
+.email-icon,
+.call-icon {
+  margin-left: 1rem;
+}
+
+.copyright {
+  position: absolute;
+  bottom: 3rem;
+}

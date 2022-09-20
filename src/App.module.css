@@ -1,0 +1,92 @@
+/* ------ Nav Menu Toggle Button ------ */
+.hamburger-menu-wrapper {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  color: white;
+  font-size: 4rem;
+  background-color: black;
+  padding: 1rem 1rem 0 1rem;
+  border: 1px solid white;
+  cursor: pointer;
+  display: none;
+  z-index: 9998;
+}
+
+/* ------ Mobile Nav Wrapper ------ */
+.mobile-nav-wrapper {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  background-color: black;
+  z-index: 9997;
+}
+/* ------ Overall Screen Wrapper ------ */
+.main-screen-wrapper {
+  display: flex;
+  z-index: 9998;
+}
+
+/* ------ Desktop Nav Wrapper ------ */
+.desktop-nav-wrapper {
+  width: clamp(10vw, 30vw, 30vw);
+  min-height: 100vh;
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ------ Main Page Wrapper ------ */
+.main-page-wrapper {
+  width: clamp(90vw, 100vw, 100vw);
+  min-height: 100vh; /* Will need to be increased in media queries */
+  background: linear-gradient(to bottom, #c5c5c5, #9c8367);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ------ Media Queries ------ */
+@media only screen and (max-width: 1350px) {
+  .desktop-nav-wrapper {
+    width: clamp(30vw, 30vw, 30vw);
+  }
+
+  .main-page-wrapper {
+    width: clamp(70vw, 70vw, 100vw);
+  }
+}
+
+@media only screen and (max-width: 1050px) {
+  .desktop-nav-wrapper {
+    width: clamp(40vw, 40vw, 30vw);
+  }
+
+  .main-page-wrapper {
+    width: clamp(60vw, 60vw, 100vw);
+  }
+}
+
+@media only screen and (max-width: 770px) {
+  .desktop-nav-wrapper {
+    display: none;
+  }
+
+  .main-page-wrapper {
+    width: clamp(100vw, 100vw, 100vw);
+  }
+
+  .hamburger-menu-wrapper {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+}
