@@ -1,11 +1,9 @@
 import React, { useState } from "react";
-import {
-  AiFillCaretLeft,
-  AiFillCaretRight,
-  AiOutlineClose,
-} from "react-icons/ai";
 
 import classes from "./Portraits.module.css";
+
+import ModalBackground from "../components/modal/ModalBackground";
+import ModalContent from "../components/modal/ModalContent";
 
 const Portraits = () => {
   const [modalActive, setModalActive] = useState(false);
@@ -21,45 +19,25 @@ const Portraits = () => {
     setCurrentImage(1);
   };
 
-  const prevModalImageHandler = () => {
-    currentImage == 1
-      ? setCurrentImage(7)
-      : setCurrentImage(Number(currentImage) - 1);
-  };
-
-  const nextModalImageHandler = () => {
-    currentImage == 7
-      ? setCurrentImage(1)
-      : setCurrentImage(Number(currentImage) + 1);
+  const setCurrentImageHandler = (img) => {
+    setCurrentImage(img);
   };
 
   return (
     <React.Fragment>
       {/*------ Modal ------*/}
-      {modalActive && <div className={classes["modal-background"]} />}
+      {modalActive && <ModalBackground />}
       {modalActive && (
-        <div className={classes["modal-content-wrapper"]}>
-          <div className={classes["utility-row"]}>
-            <span className={classes.icon} onClick={prevModalImageHandler}>
-              <AiFillCaretLeft />
-            </span>
-            <img
-              className={classes["modal-image"]}
-              src={"/photos/portraits/large/photo" + currentImage + ".jpg"}
-              alt="Modal Image"
-            />
-            <span className={classes.icon} onClick={nextModalImageHandler}>
-              <AiFillCaretRight />
-            </span>
-          </div>
-          <span
-            className={classes["modal-close"]}
-            onClick={turnOffModalHandler}
-          >
-            <AiOutlineClose />
-          </span>
-        </div>
+        <ModalContent
+          openModal={turnOnModalHandler}
+          closeModal={turnOffModalHandler}
+          currentImage={currentImage}
+          setCurrentImage={setCurrentImageHandler}
+          imagesTotal={7}
+          imageDirectory="/photos/portraits/large/photo"
+        />
       )}
+
       {/*------ Page ------*/}
       <div className={classes["page-wrapper"]}>
         <img

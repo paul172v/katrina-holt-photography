@@ -11,6 +11,7 @@ import Portraits from "./pages/Portraits";
 import StreetPhotography from "./pages/StreetPhotography";
 import Nature from "./pages/Nature";
 import Weddings from "./pages/Weddings";
+import Footer from "./components/footer/Footer";
 
 function App() {
   const [navMobileActive, setNavMobileActive] = useState(false);
@@ -26,7 +27,7 @@ function App() {
   return (
     <React.Fragment>
       <div className={navMobileActive ? classes["mobile-nav-wrapper"] : ""}>
-        {navMobileActive && <NavMobile />}
+        {navMobileActive && <NavMobile turnOffNav={turnOffMobileNavHandler} />}
       </div>
 
       <div>
@@ -69,6 +70,7 @@ function App() {
           {navMobileActive && <AiOutlineClose />}
         </div>
       </div>
+      <Footer />
     </React.Fragment>
   );
 }

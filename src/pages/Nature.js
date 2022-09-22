@@ -1,17 +1,14 @@
 import React, { useState } from "react";
-import {
-  AiFillCaretLeft,
-  AiFillCaretRight,
-  AiOutlineClose,
-} from "react-icons/ai";
 
 import classes from "./Nature.module.css";
 
 import ModalBackground from "../components/modal/ModalBackground";
+import ModalContent from "../components/modal/ModalContent";
 
 const Nature = () => {
   const [modalActive, setModalActive] = useState(false);
-  const [currentImage, setCurrentImage] = useState("1");
+
+  const [currentImage, setCurrentImage] = useState(Number(1));
 
   const turnOnModalHandler = (el) => {
     setModalActive(true);
@@ -23,45 +20,26 @@ const Nature = () => {
     setCurrentImage(1);
   };
 
-  const prevModalImageHandler = () => {
-    currentImage == 1
-      ? setCurrentImage(6)
-      : setCurrentImage(Number(currentImage) - 1);
-  };
-
-  const nextModalImageHandler = () => {
-    currentImage == 6
-      ? setCurrentImage(1)
-      : setCurrentImage(Number(currentImage) + 1);
+  const setCurrentImageHandler = (img) => {
+    setCurrentImage(img);
   };
 
   return (
     <React.Fragment>
       {/*------ Modal ------*/}
       {modalActive && <ModalBackground />}
+
       {modalActive && (
-        <div className={classes["modal-content-wrapper"]}>
-          <div className={classes["utility-row"]}>
-            <span className={classes.icon} onClick={prevModalImageHandler}>
-              <AiFillCaretLeft />
-            </span>
-            <img
-              className={classes["modal-image"]}
-              src={"/photos/nature/large/photo" + currentImage + ".jpg"}
-              alt="Modal Image"
-            />
-            <span className={classes.icon} onClick={nextModalImageHandler}>
-              <AiFillCaretRight />
-            </span>
-          </div>
-          <span
-            className={classes["modal-close"]}
-            onClick={turnOffModalHandler}
-          >
-            <AiOutlineClose />
-          </span>
-        </div>
+        <ModalContent
+          openModal={turnOnModalHandler}
+          closeModal={turnOffModalHandler}
+          currentImage={currentImage}
+          setCurrentImage={setCurrentImageHandler}
+          imagesTotal={6}
+          imageDirectory="/photos/nature/large/photo"
+        />
       )}
+
       {/*------ Page ------*/}
       <div className={classes["page-wrapper"]}>
         <img
