@@ -1,6 +1,6 @@
 /* ------ Nav Menu Toggle Button ------ */
 .hamburger-menu-wrapper {
-  position: absolute;
+  position: fixed;
   top: 2rem;
   right: 2rem;
   color: white;
@@ -10,7 +10,7 @@
   border: 1px solid white;
   cursor: pointer;
   display: none;
-  z-index: 9998;
+  z-index: 9997;
 }
 
 /* ------ Mobile Nav Wrapper ------ */
@@ -23,12 +23,12 @@
   display: flex;
   justify-content: center;
   background-color: black;
-  z-index: 9997;
+  z-index: 9996;
 }
 /* ------ Overall Screen Wrapper ------ */
 .main-screen-wrapper {
   display: flex;
-  z-index: 9998;
+  z-index: 9997;
 }
 
 /* ------ Desktop Nav Wrapper ------ */
