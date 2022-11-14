@@ -1,0 +1,49 @@
+.footer-wrapper {
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 0;
+  background-color: black;
+  color: white;
+  display: none;
+}
+
+.footer-heading {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.footer-text {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.footer-email,
+.footer-call {
+  text-decoration: none;
+  color: white;
+  font-size: 2rem;
+  margin: 0.5rem 0;
+  border-bottom: 1px solid white;
+}
+
+.footer-email:hover,
+.footer-call:hover {
+  color: rgb(199, 34, 34);
+  border-bottom: 1x solid rgb(199, 34, 34);
+}
+
+.email-icon,
+.call-icon {
+  margin-left: 1rem;
+}
+
+.copyright {
+  font-size: 2rem;
+  margin-top: 2rem;
+}
+
+@media only screen and (max-width: 800px) {
+  .footer-wrapper {
+    display: flex;
+  }
+}

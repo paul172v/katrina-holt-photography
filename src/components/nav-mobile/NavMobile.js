@@ -4,7 +4,7 @@ import { AiOutlineCamera, AiOutlineMail, AiOutlinePhone } from "react-icons/ai";
 
 import classes from "./NavMobile.module.css";
 
-const NavMobile = () => {
+const NavMobile = (props) => {
   return (
     <nav className={classes["nav-wrapper"]}>
       <div className={classes["signature-wrapper"]}>
@@ -18,6 +18,7 @@ const NavMobile = () => {
       <ul className={classes["nav-ul"]}>
         <li className={classes["nav-li"]}>
           <NavLink
+            onClick={props.turnOffNav}
             className={(navData) => (navData.isActive ? classes.active : "")}
             to="/about-me"
           >
@@ -26,6 +27,7 @@ const NavMobile = () => {
         </li>
         <li className={classes["nav-li"]}>
           <NavLink
+            onClick={props.turnOffNav}
             className={(navData) => (navData.isActive ? classes.active : "")}
             to="/portraits"
           >
@@ -34,6 +36,7 @@ const NavMobile = () => {
         </li>
         <li className={classes["nav-li"]}>
           <NavLink
+            onClick={props.turnOffNav}
             className={(navData) => (navData.isActive ? classes.active : "")}
             to="/street-photography"
           >
@@ -42,6 +45,7 @@ const NavMobile = () => {
         </li>
         <li className={classes["nav-li"]}>
           <NavLink
+            onClick={props.turnOffNav}
             className={(navData) => (navData.isActive ? classes.active : "")}
             to="/nature"
           >
@@ -50,6 +54,7 @@ const NavMobile = () => {
         </li>
         <li className={classes["nav-li"]}>
           <NavLink
+            onClick={props.turnOffNav}
             className={(navData) => (navData.isActive ? classes.active : "")}
             to="/weddings"
           >

@@ -1,10 +1,16 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 import classes from "./AboutMe.module.css";
 
 const AboutMe = () => {
   return (
-    <div className={classes["page-wrapper"]}>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1.2 }}
+      className={classes["page-wrapper"]}
+    >
       <h2 className={classes.heading}>Hi, my name is Katrina</h2>
       <p className={classes.para}>
         Fusce auctor bibendum laoreet. Maecenas at dolor massa. Pellentesque
@@ -14,7 +20,7 @@ const AboutMe = () => {
         turpis nec, aliquet tristique ante. Praesent quis maximus est. Donec
         porta in orci eget blandit.
       </p>
-    </div>
+    </motion.div>
   );
 };
 

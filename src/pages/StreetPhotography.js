@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import {
-  AiFillCaretLeft,
-  AiFillCaretRight,
-  AiOutlineClose,
-} from "react-icons/ai";
+import { motion } from "framer-motion";
 
 import classes from "./StreetPhotography.module.css";
+
+import ModalBackground from "../components/modal/ModalBackground";
+import ModalContent from "../components/modal/ModalContent";
 
 const StreetPhotography = () => {
   const [modalActive, setModalActive] = useState(false);
@@ -21,47 +20,31 @@ const StreetPhotography = () => {
     setCurrentImage(1);
   };
 
-  const prevModalImageHandler = () => {
-    currentImage == 1
-      ? setCurrentImage(9)
-      : setCurrentImage(Number(currentImage) - 1);
-  };
-
-  const nextModalImageHandler = () => {
-    currentImage == 9
-      ? setCurrentImage(1)
-      : setCurrentImage(Number(currentImage) + 1);
+  const setCurrentImageHandler = (img) => {
+    setCurrentImage(img);
   };
 
   return (
     <React.Fragment>
       {/*------ Modal ------*/}
-      {modalActive && <div className={classes["modal-background"]} />}
+      {modalActive && <ModalBackground />}
       {modalActive && (
-        <div className={classes["modal-content-wrapper"]}>
-          <div className={classes["utility-row"]}>
-            <span className={classes.icon} onClick={prevModalImageHandler}>
-              <AiFillCaretLeft />
-            </span>
-            <img
-              className={classes["modal-image"]}
-              src={"/photos/street/large/photo" + currentImage + ".jpg"}
-              alt="Modal Image"
-            />
-            <span className={classes.icon} onClick={nextModalImageHandler}>
-              <AiFillCaretRight />
-            </span>
-          </div>
-          <span
-            className={classes["modal-close"]}
-            onClick={turnOffModalHandler}
-          >
-            <AiOutlineClose />
-          </span>
-        </div>
+        <ModalContent
+          openModal={turnOnModalHandler}
+          closeModal={turnOffModalHandler}
+          currentImage={currentImage}
+          setCurrentImage={setCurrentImageHandler}
+          imagesTotal={9}
+          imageDirectory="/photos/street/large/photo"
+        />
       )}
       {/*------ Page ------*/}
-      <div className={classes["page-wrapper"]}>
+      <motion.div
+        initial={{ y: "100vh", opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        className={classes["page-wrapper"]}
+      >
         <img
           className={classes.photo1 + " " + classes.photo}
           src={"/photos/street/photo1.jpg"}
@@ -125,7 +108,7 @@ const StreetPhotography = () => {
           id="9"
           onClick={turnOnModalHandler}
         />
-      </div>
+      </motion.div>
     </React.Fragment>
   );
 };

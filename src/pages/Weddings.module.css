@@ -1,70 +1,3 @@
-/*------ Modal ------*/
-.modal-background {
-  position: fixed;
-  left: 0;
-  top: 0;
-  height: 100vh;
-  width: 100vw;
-  background-color: black;
-  z-index: 8998;
-}
-
-.modal-content-wrapper {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 8999;
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.utility-row {
-  display: flex;
-  align-items: center;
-}
-
-.icon {
-  color: white;
-  font-size: 7rem;
-  margin: 0 2rem;
-  cursor: pointer;
-}
-
-.icon:hover,
-.icon:active,
-.modal-close:hover,
-.modal-close:active {
-  color: rgb(199, 34, 34);
-}
-
-.modal-image {
-  max-height: 60rem;
-  max-width: 60vw;
-}
-
-.modal-close {
-  color: white;
-  position: fixed;
-  top: 0;
-  right: 0;
-  margin-right: 2rem;
-  margin-top: 2rem;
-  font-size: 4rem;
-  cursor: pointer;
-}
-
-@media only screen and (max-width: 770px) {
-  .modal-close {
-    top: 10rem;
-    right: 1rem;
-  }
-}
-
-/*------ Page ------*/
-
 .page-wrapper {
   width: 80%;
   min-height: 90%;
@@ -135,7 +68,7 @@
 @media only screen and (max-width: 650px) {
   .page-wrapper {
     grid-template-columns: 50% 50%;
-    grid-template-rows: 5fr 5fr 5fr 5fr;
+    grid-template-rows: 15rem 15rem 15rem 15rem 15rem 15rem;
     gap: 1rem;
     padding: 2rem;
   }
